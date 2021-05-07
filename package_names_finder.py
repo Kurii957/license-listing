@@ -1,6 +1,6 @@
 filepath = "C:\maven\spring-petclinic\dependency_tree.txt"
-tab = [] #TODO move data to set
-all_ready = {}
+tab = []
+all_names = []
 
 # checking if file exists
 try:
@@ -16,8 +16,6 @@ for line in tab:
     tab[index] = tab[index].lstrip("[INFO]")
     while tab[index].startswith("|") or tab[index].startswith(" ") or tab[index].startswith("+") or tab[index].startswith("-") or tab[index].startswith("\\"):
         tab[index] = tab[index][1:]
-
-    print(tab[index])
 
     # setting the prefix
     separator = tab[index].index(":")
@@ -46,16 +44,13 @@ for line in tab:
     except:
         packet_version = help
 
-    print("NAME: "+packet_name)
-    print("PREFIX: "+packet_prefix)
-    print("TYPE: "+file_type)
-    print("VERSION: "+packet_version)
-    print()
-
+    # moving data to table
+    all = packet_name + ";" + packet_version + ";" + packet_prefix
+    all_names.append(all)
 
     index+=1
 
-
-
+for line in all_names:
+    print(line)
 
 file.close()
