@@ -14,8 +14,7 @@ for line in tab:
     tab[index] = tab[index].strip()
     tab[index] = tab[index].strip( )
 
-
     print(tab[index])
     index+=1
-
+print("HEJA")
 file.close()
