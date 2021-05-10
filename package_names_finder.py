@@ -52,16 +52,17 @@ for line in tab:
 
     index+=1
 
-#for line in all_names:
+# for line in all_names:
 #    print(line)
 
-
+# removing duplicates
 no_duplicates = {}
 no_duplicates[all_names[0]] = 1
 
 for num in range(0, len(all_names)):
     no_duplicates.setdefault(all_names[num], 1)
 
+# saving data to csv file
 to_csv = open("files\java_packages.csv", "w")
 
 for key in no_duplicates.keys():
