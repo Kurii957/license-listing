@@ -55,16 +55,15 @@ for line in tab:
 #for line in all_names:
 #    print(line)
 
-# ----------------------------------------
 
-no_duplicats = {}
-no_duplicats[all_names[0]] = 1
+no_duplicates = {}
+no_duplicates[all_names[0]] = 1
 
 for num in range(0, len(all_names)):
-    no_duplicats.setdefault(all_names[num], 1)
+    no_duplicates.setdefault(all_names[num], 1)
 
 
-for key in no_duplicats.keys():
+for key in no_duplicates.keys():
     print(key)
 
 file.close()
