@@ -56,14 +56,17 @@ for line in tab:
 #    print(line)
 
 
+# excluding duplicates from table
 no_duplicates = {}
 no_duplicates[all_names[0]] = 1
 
 for num in range(0, len(all_names)):
     no_duplicates.setdefault(all_names[num], 1)
 
+to_csv = open("files\java_packages_names.csv", "w")
 
 for key in no_duplicates.keys():
-    print(key)
+    to_csv.write(key+"\n")
+
 
 file.close()
