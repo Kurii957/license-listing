@@ -1,6 +1,8 @@
-filepath = "C:\maven\spring-petclinic\dependency_tree.txt"
+filepath = "files\dependency_tree.txt"
 tab = []
 all_names = []
+one = 1
+zero = 0
 
 # checking if file exists
 try:
@@ -15,31 +17,31 @@ for line in tab:
     # deleting unnecessary signs
     tab[index] = tab[index].lstrip("[INFO]")
     while tab[index].startswith("|") or tab[index].startswith(" ") or tab[index].startswith("+") or tab[index].startswith("-") or tab[index].startswith("\\"):
-        tab[index] = tab[index][1:]
+        tab[index] = tab[index][one:]
 
     # setting the prefix
     separator = tab[index].index(":")
-    packet_prefix = tab[index][0:separator]
-    separator += 1
+    packet_prefix = tab[index][zero:separator]
+    separator += one
     help = tab[index][separator:]
 
     # setting the name
     separator = help.index(":")
-    packet_name = help[0:separator]
-    separator += 1
+    packet_name = help[zero:separator]
+    separator += one
     help = help[separator:]
 
     # setting the file type
     separator = help.index(":")
-    file_type = help[0:separator]
-    separator += 1
+    file_type = help[zero:separator]
+    separator += one
     help = help[separator:]
 
     # setting the version
     try:
         separator = help.index(":")
-        packet_version = help[0:separator]
-        separator += 1
+        packet_version = help[zero:separator]
+        separator += one
         help = help[separator:]
     except:
         packet_version = help
@@ -50,10 +52,22 @@ for line in tab:
 
     index+=1
 
-for line in all_names:
-    print(line)
+#for line in all_names:
+#    print(line)
 
-    # ----------------------------------------
+# ----------------------------------------
 
+no_duplicats = {}
+no_duplicats["hej"] = 1
+no_duplicats[all_names[0]] = 1
+
+for num in range(0, len(all_names)):
+    for key in no_duplicats.keys():
+        if all_names[num] == key:
+            no_duplicats[key] += 1
+        else:
+            no_duplicats[key] = 1
+#for key in no_duplicats.keys():
+#    print(key)
 
 file.close()
