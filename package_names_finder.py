@@ -3,6 +3,7 @@ tab = []
 all_names = []
 one = 1
 zero = 0
+sep = ","
 
 # checking if file exists
 try:
@@ -47,7 +48,7 @@ for line in tab:
         packet_version = help
 
     # moving data to table
-    all = packet_name + ";" + packet_version + ";" + packet_prefix
+    all = packet_name + sep + packet_version + sep + packet_prefix
     all_names.append(all)
 
     index+=1
