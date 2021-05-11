@@ -1,3 +1,4 @@
+Package name,Package version,Package name prefix
 HdrHistogram,2.1.12,org.hdrhistogram
 HikariCP,3.4.5,com.zaxxer
 LatencyUtils,2.0.3,org.latencyutils

@@ -68,7 +68,7 @@ to_csv = open("files\java_packages.csv", "w")
 
 keys = []
 
-#to_csv.write("Package name"+sep+"Package version"+sep+"Package name prefix\n")
+to_csv.write("Package name"+sep+"Package version"+sep+"Package name prefix\n")
 for key in no_duplicates.keys():
     keys.append(key)
 
