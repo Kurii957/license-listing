@@ -66,8 +66,15 @@ for num in range(0, len(all_names)):
 # saving data to csv file
 to_csv = open("files\java_packages.csv", "w")
 
-to_csv.write("Package name"+sep+"Package version"+sep+"Package name prefix\n")
+keys = []
+
+#to_csv.write("Package name"+sep+"Package version"+sep+"Package name prefix\n")
 for key in no_duplicates.keys():
+    keys.append(key)
+
+keys.sort()
+
+for key in keys:
     to_csv.write(key+"\n")
 
 
