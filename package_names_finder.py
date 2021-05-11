@@ -1,3 +1,5 @@
+import math
+
 filepath = "files\dependency_tree.txt"
 tab = []
 all_names = []
@@ -42,8 +44,10 @@ for line in tab:
     try:
         separator = help.index(":")
         packet_version = help[zero:separator]
-        separator += one
-        help = help[separator:]
+        separator = packet_version.rindex(".")
+        help2 = packet_version[separator+1:]
+        if help2 == "Final" or help2 == "RELEASE":
+            packet_version = packet_version[zero:separator]
     except:
         packet_version = help
 
@@ -76,7 +80,6 @@ keys.sort()
 
 for key in keys:
     to_csv.write(key+"\n")
-
 
 to_csv.close()
 file.close()
