@@ -11,4 +11,4 @@ jobs:
       name: test1 nazwa
       script:
         - export PYTHONPATH=../
-        - pytest -v
+        - python -m pytest test/
