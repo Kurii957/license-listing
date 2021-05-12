@@ -13,16 +13,10 @@ class JavaPackageParser:
         sep = ","
 
         # checking if file exists
-        try:
-            file = open(self.input, "r")
-            for line in file.readlines():
-                tab.append(line.strip())  # moving values to table
-        except FileNotFoundError:
-            print("Can't find a file")
+        tab = self.open_file()
 
-        index = 0
-        for line in tab:
-            # deleting unnecessary signs
+        # deleting unnecessary signs
+        for index in range (0, len(tab)):
             tab[index] = tab[index].lstrip("[INFO]")
             while tab[index].startswith("|") or tab[index].startswith(" ") or tab[index].startswith("+") or tab[
                 index].startswith("-") or tab[index].startswith("\\"):
@@ -31,19 +25,19 @@ class JavaPackageParser:
             s = ":"
 
             # setting the prefix
-            packet_prefix, separator = self.separate(s, tab[index], one, zero)
+            packet_prefix, separator = self.separate_string(s, tab[index], one, zero)
             help = tab[index][separator:]
 
             # setting the name
-            packet_name, separator = self.separate(s, help, one, zero)
+            packet_name, separator = self.separate_string(s, help, one, zero)
             help = help[separator:]
 
             # setting the file type
-            file_type, separator = self.separate(s, help, one, zero)
+            file_type, separator = self.separate_string(s, help, one, zero)
             help = help[separator:]
 
             # setting the version
-            packet_version = self.set_version(s, help, zero)
+            packet_version = self.get_version(s, help, zero)
 
             # moving data to table
             all = packet_name + sep + packet_version + sep + packet_prefix
@@ -55,33 +49,46 @@ class JavaPackageParser:
         no_duplicates = {}
         no_duplicates[all_names[0]] = 1
 
-        for num in range(0, len(all_names)):
-            no_duplicates.setdefault(all_names[num], 1)
+        self.remove_duplicates(all_names, no_duplicates)
 
         # saving data to csv file
+        self.write_to_file(no_duplicates, sep)
+
+    def write_to_file(self, no_duplicates, sep):
         to_csv = open(self.output, "w")
-
         keys = []
-
         to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix\n")
         for key in no_duplicates.keys():
             keys.append(key)
-
         keys.sort()
-
         for key in keys:
             to_csv.write(key + "\n")
-
         to_csv.close()
-        file.close()
 
-    def separate(self, s, help, one, zero):
+    def remove_duplicates(self, all_names, no_duplicates):
+        for num in range(0, len(all_names)):
+            no_duplicates.setdefault(all_names[num], 1)
+
+    def open_file(self):
+        tab = []
+        try:
+            file = open(self.input, "r")
+            for line in file.readlines():
+                tab.append(line.strip())  # moving values to table
+            file.close()
+        except FileNotFoundError:
+            print("Can't find a file")
+
+
+        return tab
+
+    def separate_string(self, s, help, one, zero):
         separator = help.index(s)
         separated_part = help[zero:separator]
         separator += one
         return separated_part, separator
 
-    def set_version(self, s, help, zero):
+    def get_version(self, s, help, zero):
         try:
             separator = help.index(s)
             packet_version = help[zero:separator]
