@@ -1,6 +1,6 @@
 import sys
 
-from packageParser import JavaPackageParser
+from javaPackageParser import JavaPackageParser
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
