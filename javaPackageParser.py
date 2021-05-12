@@ -28,43 +28,28 @@ class JavaPackageParser:
                 index].startswith("-") or tab[index].startswith("\\"):
                 tab[index] = tab[index][one:]
 
+            s = ":"
+
             # setting the prefix
-            separator = tab[index].index(":")
-            packet_prefix = tab[index][zero:separator]
-            separator += one
+            packet_prefix, separator = self.separate(s, tab[index], one, zero)
             help = tab[index][separator:]
 
             # setting the name
-            separator = help.index(":")
-            packet_name = help[zero:separator]
-            separator += one
+            packet_name, separator = self.separate(s, help, one, zero)
             help = help[separator:]
 
             # setting the file type
-            separator = help.index(":")
-            file_type = help[zero:separator]
-            separator += one
+            file_type, separator = self.separate(s, help, one, zero)
             help = help[separator:]
 
             # setting the version
-            try:
-                separator = help.index(":")
-                packet_version = help[zero:separator]
-                separator = packet_version.rindex(".")
-                help2 = packet_version[separator + 1:]
-                if help2 == "Final" or help2 == "RELEASE":
-                    packet_version = packet_version[zero:separator]
-            except:
-                packet_version = help
+            packet_version = self.set_version(s, help, zero)
 
             # moving data to table
             all = packet_name + sep + packet_version + sep + packet_prefix
             all_names.append(all)
 
             index += 1
-
-        # for line in all_names:
-        #    print(line)
 
         # removing duplicates
         no_duplicates = {}
@@ -89,3 +74,21 @@ class JavaPackageParser:
 
         to_csv.close()
         file.close()
+
+    def separate(self, s, help, one, zero):
+        separator = help.index(s)
+        separated_part = help[zero:separator]
+        separator += one
+        return separated_part, separator
+
+    def set_version(self, s, help, zero):
+        try:
+            separator = help.index(s)
+            packet_version = help[zero:separator]
+            separator = packet_version.rindex(".")
+            help2 = packet_version[separator + 1:]
+            if help2 == "Final" or help2 == "RELEASE":
+                packet_version = packet_version[zero:separator]
+        except:
+            packet_version = help
+        return packet_version
