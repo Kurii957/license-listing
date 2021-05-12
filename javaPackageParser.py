@@ -43,7 +43,7 @@ class JavaPackageParser:
             help = help[separator:]
 
             # setting the version
-            packet_version = self.set_version(s, help, zero)
+            packet_version = self.get_version(s, help)
 
             # moving data to table
             all = packet_name + sep + packet_version + sep + packet_prefix
@@ -81,14 +81,14 @@ class JavaPackageParser:
         separator += one
         return separated_part, separator
 
-    def set_version(self, s, help, zero):
+    def get_version(self, separator, raw_version):
         try:
-            separator = help.index(s)
-            packet_version = help[zero:separator]
+            separator = raw_version.index(separator)
+            packet_version = raw_version[0:separator]
             separator = packet_version.rindex(".")
             help2 = packet_version[separator + 1:]
             if help2 == "Final" or help2 == "RELEASE":
-                packet_version = packet_version[zero:separator]
+                packet_version = packet_version[0:separator]
         except:
-            packet_version = help
+            packet_version = raw_version
         return packet_version
