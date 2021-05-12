@@ -10,5 +10,4 @@ jobs:
     - stage: test1
       name: test1 nazwa
       script:
-        - export PYTHONPATH=../
         - python -m pytest test/
