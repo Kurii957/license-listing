@@ -6,10 +6,7 @@ class JavaPackageParser:
 
     def run(self):
 
-        tab = []
         all_names = []
-        one = 1
-        zero = 0
         sep = ","
 
         # checking if file exists
@@ -20,20 +17,20 @@ class JavaPackageParser:
             tab[index] = tab[index].lstrip("[INFO]")
             while tab[index].startswith("|") or tab[index].startswith(" ") or tab[index].startswith("+") or tab[
                 index].startswith("-") or tab[index].startswith("\\"):
-                tab[index] = tab[index][one:]
+                tab[index] = tab[index][1:]
 
             s = ":"
 
             # setting the prefix
-            packet_prefix, separator = self.separate_string(s, tab[index], one, zero)
+            packet_prefix, separator = self.separate_string(s, tab[index])
             help = tab[index][separator:]
 
             # setting the name
-            packet_name, separator = self.separate_string(s, help, one, zero)
+            packet_name, separator = self.separate_string(s, help)
             help = help[separator:]
 
             # setting the file type
-            file_type, separator = self.separate_string(s, help, one, zero)
+            file_type, separator = self.separate_string(s, help)
             help = help[separator:]
 
             # setting the version
@@ -82,10 +79,10 @@ class JavaPackageParser:
 
         return tab
 
-    def separate_string(self, s, help, one, zero):
+    def separate_string(self, s, help):
         separator = help.index(s)
-        separated_part = help[zero:separator]
-        separator += one
+        separated_part = help[0:separator]
+        separator += 1
         return separated_part, separator
 
     def get_version(self, s, raw_version):
