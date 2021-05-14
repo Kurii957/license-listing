@@ -29,5 +29,3 @@ class TestJavaPackageParser(TestCase):
         pp.run()
 
         self.assertTrue(filecmp.cmp('test/files/output.csv', out_file));
-
-
