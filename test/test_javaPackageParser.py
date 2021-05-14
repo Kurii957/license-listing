@@ -1,4 +1,5 @@
 from unittest import TestCase
+import filecmp
 
 from javaPackageParser import JavaPackageParser
 
@@ -21,6 +22,13 @@ class TestJavaPackageParser(TestCase):
     def test_set_version_empty(self):
         res = self.get_tested_object().get_version(':', '')
         self.assertEqual('', res)
+        
+    def test_run(self):
+        out_file = 'test/tmp/java_packages.csv'
+        pp = JavaPackageParser('files/dependency_tree.txt', out_file)
+        pp.run()
+
+        self.assertTrue(filecmp.cmp('test/files/output.csv', out_file));
 
     def test_run(self):
         out_file = 'tmp/output.csv'
