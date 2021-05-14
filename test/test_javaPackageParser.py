@@ -3,12 +3,10 @@ import filecmp
 
 from javaPackageParser import JavaPackageParser
 
-
 class TestJavaPackageParser(TestCase):
 
     def get_tested_object(self):
         return JavaPackageParser('', '')
-
 
     def test_set_version(self):
 
@@ -29,4 +27,3 @@ class TestJavaPackageParser(TestCase):
         pp.run()
 
         self.assertTrue(filecmp.cmp('test/files/output.csv', out_file));
-
