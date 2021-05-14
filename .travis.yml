@@ -1,1 +1,13 @@
 language: python
+python:
+  - "3.9"
+
+stages:
+  - test1
+
+jobs:
+  include:
+    - stage: test1
+      name: test1 nazwa
+      script:
+        - python -m pytest test/
