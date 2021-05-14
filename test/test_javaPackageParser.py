@@ -25,15 +25,8 @@ class TestJavaPackageParser(TestCase):
         
     def test_run(self):
         out_file = 'test/tmp/java_packages.csv'
-        pp = JavaPackageParser('files/dependency_tree.txt', out_file)
+        pp = JavaPackageParser('files/dep_tree_out.txt', out_file)
         pp.run()
 
         self.assertTrue(filecmp.cmp('test/files/output.csv', out_file));
 
-    def test_run(self):
-        out_file = 'tmp/output.csv'
-        pp = JavaPackageParser('../files/dependency_tree.txt', out_file)
-
-        pp.run()
-
-        self.assertTrue(filecmp.cmp('files/output.csv', out_file));
