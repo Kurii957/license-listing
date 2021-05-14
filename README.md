@@ -1,2 +1,1 @@
-# Example
-Jakieś zmiany
+# License-listing
