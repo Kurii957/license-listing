@@ -1,8 +1,13 @@
+import os
+
 class JavaPackageParser:
 
     def __init__(self, input_file, output_file):
         self.input = input_file
         self.output = output_file
+
+        print('input: ', os.path.abspath(input_file))
+        print('output: ', os.path.abspath(output_file))
 
     def run(self):
 
@@ -13,7 +18,7 @@ class JavaPackageParser:
         tab = self.open_file()
 
         # deleting unnecessary signs
-        for index in range (7, len(tab)-6):
+        for index in range(7, len(tab)-6):
             tab[index] = tab[index].lstrip("[INFO]")
             while tab[index].startswith("|") or tab[index].startswith(" ") or tab[index].startswith("+") or tab[
                 index].startswith("-") or tab[index].startswith("\\"):
@@ -67,6 +72,8 @@ class JavaPackageParser:
             no_duplicates.setdefault(all_names[num], 1)
 
     def open_file(self):
+        a = os.path.abspath(self.input)
+
         tab = []
         try:
             file = open(self.input, "r")
