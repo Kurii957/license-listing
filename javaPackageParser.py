@@ -57,7 +57,7 @@ class JavaPackageParser:
         to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix\n")
         for key in no_duplicates.keys():
             keys.append(key)
-        keys.sort()
+        keys = sorted(keys, key=str.lower)
         for key in keys:
             to_csv.write(key + "\n")
         to_csv.close()
