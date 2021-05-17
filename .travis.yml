@@ -10,4 +10,4 @@ jobs:
     - stage: test1
       name: test1 nazwa
       script:
-        - python -m pytest test/
+        - python -m pytest 
