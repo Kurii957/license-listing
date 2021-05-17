@@ -1,8 +1,11 @@
+import os
+
 class JavaPackageParser:
 
     def __init__(self, input_file, output_file):
-        self.input = input_file
-        self.output = output_file
+        self.input = os.path.abspath(input_file)
+        self.output = os.path.abspath(output_file)
+
 
     def run(self):
 
@@ -13,7 +16,7 @@ class JavaPackageParser:
         tab = self.open_file()
 
         # deleting unnecessary signs
-        for index in range (7, len(tab)-6):
+        for index in range(7, len(tab)-6):
             tab[index] = tab[index].lstrip("[INFO]")
             while tab[index].startswith("|") or tab[index].startswith(" ") or tab[index].startswith("+") or tab[
                 index].startswith("-") or tab[index].startswith("\\"):
@@ -52,15 +55,18 @@ class JavaPackageParser:
         self.write_to_file(no_duplicates, sep)
 
     def write_to_file(self, no_duplicates, sep):
-        to_csv = open(self.output, "w")
-        keys = []
-        to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix\n")
-        for key in no_duplicates.keys():
-            keys.append(key)
-        keys = sorted(keys, key=str.lower)
-        for key in keys:
-            to_csv.write(key + "\n")
-        to_csv.close()
+        try:
+            to_csv = open(self.output, "w")
+            keys = []
+            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix\n")
+            for key in no_duplicates.keys():
+                keys.append(key)
+            keys = sorted(keys, key=str.lower)
+            for key in keys:
+                to_csv.write(key + "\n")
+            to_csv.close()
+        except FileNotFoundError:
+            print("Can't write to a file: ", self.output)
 
     def remove_duplicates(self, all_names, no_duplicates):
         for num in range(0, len(all_names)):
@@ -69,12 +75,12 @@ class JavaPackageParser:
     def open_file(self):
         tab = []
         try:
-            file = open(self.input, "r")
-            for line in file.readlines():
+            in_file = open(self.input, "r")
+            for line in in_file.readlines():
                 tab.append(line.strip())  # moving values to table
-            file.close()
+            in_file.close()
         except FileNotFoundError:
-            print("Can't find a file")
+            print("Can't open a file: ", self.input)
 
 
         return tab
