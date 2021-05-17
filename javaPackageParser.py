@@ -6,7 +6,6 @@ class JavaPackageParser:
         self.input = os.path.abspath(input_file)
         self.output = os.path.abspath(output_file)
 
-
     def run(self):
 
         all_names = []
@@ -81,8 +80,6 @@ class JavaPackageParser:
             in_file.close()
         except FileNotFoundError:
             print("Can't open a file: ", self.input)
-
-
         return tab
 
     def separate_string(self, s, help):
