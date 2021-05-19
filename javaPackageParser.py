@@ -94,8 +94,6 @@ class JavaPackageParser:
             packet_version = raw_version[0:separator]
             separator = packet_version.rindex(".")
             help2 = packet_version[separator + 1:]
-            if help2 == "Final" or help2 == "RELEASE":
-                packet_version = packet_version[0:separator]
         except:
             packet_version = raw_version
         return packet_version
