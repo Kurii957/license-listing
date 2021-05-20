@@ -58,7 +58,7 @@ class JavaPackageParser:
         try:
             to_csv = open(self.output, "w")
             keys = []
-            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type\n")
+            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type" + sep + "Declared License\n")
             """
             for key in no_duplicates.keys():
                 keys.append(key)
@@ -100,7 +100,6 @@ class JavaPackageParser:
         try:
             separator = raw_version.index(s)
             packet_version = raw_version[0:separator]
-            separator = packet_version.rindex(".")
         except:
             packet_version = raw_version
         return packet_version
