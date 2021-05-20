@@ -93,7 +93,6 @@ class JavaPackageParser:
             separator = raw_version.index(s)
             packet_version = raw_version[0:separator]
             separator = packet_version.rindex(".")
-            help2 = packet_version[separator + 1:]
         except:
             packet_version = raw_version
         return packet_version
