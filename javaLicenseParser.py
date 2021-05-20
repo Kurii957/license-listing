@@ -76,8 +76,7 @@ class JavaLicenseParser:
                 break
 
         if declared_license == '':
-                    join_string = "-"
-                    declared_license = join_string.join(not_required_license)
+            declared_license = license_type
 
         return declared_license
 
