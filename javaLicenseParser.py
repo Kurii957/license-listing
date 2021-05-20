@@ -57,8 +57,9 @@ class JavaLicenseParser:
         declared_licenses["CDDL-1.1"] = ("CDDL-1.1", "CDDL 1.1")
         declared_licenses["CC0-1.0"] = ("CC0-1.0", "CC0 1.0")
         declared_licenses["Public Domain"] = ("Public Domain", "Public Domain")
+        declared_licenses["None"] = ("None", "None")
 
-        not_required_license = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1"}
+        not_required_license = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
         declared_license = ''
         k = 0
 
