@@ -29,7 +29,6 @@ class JavaLicenseParser:
             # ----------------------------------
             declared_license = self.get_declared_license(license_type)
             license_type += sep+declared_license
-            print(license_type)
             # ----------------------------------
 
             all_parameters = package_name + sep + package_version + sep + package_prefix
@@ -69,6 +68,10 @@ class JavaLicenseParser:
                 if bool:
                     declared_license = key
                     k += 1
+                    for element in not_required_license:
+                        if declared_license == element:
+                            declared_license = "-"
+                            break
                     break
                 else:
                     continue
