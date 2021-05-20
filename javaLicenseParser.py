@@ -52,6 +52,7 @@ class JavaLicenseParser:
         declared_licenses["ISC"] = ("ISC", "ISC")
         declared_licenses["EPL-1.0"] = ("EPL-1.0", "Eclipse Public License")
         declared_licenses["EPL-2.0"] = ("EPL-2.0", "Eclipse Public License")
+        declared_licenses["EDL-1.0"] = ("EDL-1.0", "EDL 1.0", "Eclipse Distribution")
         declared_licenses["MPL-2.0"] = ("MPL-2.0", "MPL 2.0")
         declared_licenses["CDDL-1.0"] = ("CDDL-1.0", "CDDL 1.0", "CDDL")
         declared_licenses["CDDL-1.1"] = ("CDDL-1.1", "CDDL 1.1")
