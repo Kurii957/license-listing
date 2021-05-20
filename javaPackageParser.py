@@ -1,4 +1,5 @@
 import os
+from javaLicenseParser import JavaLicenseParser
 
 class JavaPackageParser:
 
@@ -57,12 +58,19 @@ class JavaPackageParser:
         try:
             to_csv = open(self.output, "w")
             keys = []
-            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix\n")
+            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type\n")
+            """
             for key in no_duplicates.keys():
                 keys.append(key)
             keys = sorted(keys, key=str.lower)
             for key in keys:
                 to_csv.write(key + "\n")
+            """
+            lp = JavaLicenseParser()
+            all_values = lp.get_license_type(no_duplicates)
+            for key in all_values:
+                to_csv.write(key + "\n")
+
             to_csv.close()
         except FileNotFoundError:
             print("Can't write to a file: ", self.output)
