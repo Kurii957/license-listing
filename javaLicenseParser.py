@@ -69,10 +69,6 @@ class JavaLicenseParser:
                 if bool:
                     declared_license = key
                     k += 1
-                    for element in not_required_license:
-                        if declared_license == element:
-                            declared_license = "-"
-                            break
                     break
                 else:
                     continue
