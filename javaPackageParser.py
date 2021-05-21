@@ -70,7 +70,7 @@ class JavaPackageParser:
             all_values, a_values = lp.get_license_type(no_duplicates)
             k = 0
             for key in all_values:
-                to_csv.write(key + a_values[k] + a_values[k+1] + "\n")
+                to_csv.write(key + sep + a_values[k] + sep + a_values[k+1] + "\n")
                 k += 2
 
             to_csv.close()
