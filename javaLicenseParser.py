@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
-with open("files/dependency-management.html") as fp:
+import os
+html_input = os.path.abspath("files/dependency-management.html")
+with open(html_input) as fp:
     soup = BeautifulSoup(fp, 'html.parser')
 
 class JavaLicenseParser:
