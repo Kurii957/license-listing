@@ -57,8 +57,8 @@ class JavaPackageParser:
     def write_to_file(self, no_duplicates, sep):
         try:
             to_csv = open(self.output, "w")
-            keys = []
-            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type" + sep + "Declared License\n")
+            # keys = []
+            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type" + sep + "Declared License" + sep + "Package URL" + sep + "License URL\n")
             """
             for key in no_duplicates.keys():
                 keys.append(key)
@@ -67,9 +67,11 @@ class JavaPackageParser:
                 to_csv.write(key + "\n")
             """
             lp = JavaLicenseParser()
-            all_values = lp.get_license_type(no_duplicates)
+            all_values, a_values = lp.get_license_type(no_duplicates)
+            k = 0
             for key in all_values:
-                to_csv.write(key + "\n")
+                to_csv.write(key + a_values[k] + a_values[k+1] + "\n")
+                k += 2
 
             to_csv.close()
         except FileNotFoundError:

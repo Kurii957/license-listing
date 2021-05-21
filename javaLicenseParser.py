@@ -6,6 +6,7 @@ class JavaLicenseParser:
 
     def get_license_type(self, no_duplicates):
         td_values = []
+        a_values = []
         all_values = []
         sep = ","
         license_type_for_td = {}
@@ -13,6 +14,8 @@ class JavaLicenseParser:
             for td in tr:
                 if td != "\n":
                     td_values.append(td.string)
+                    if td.a != None:
+                        a_values.append(td.a.get('href'))
 
         for i in range(0, len(td_values) - 6, 6):
             package_name = str(td_values[i + 1])
@@ -40,7 +43,7 @@ class JavaLicenseParser:
                 all_values.append(key+sep+license_type_for_td[key])
 
 
-        return all_values
+        return all_values, a_values
 
     def get_declared_license(self, license_type):
         declared_licenses = {}
