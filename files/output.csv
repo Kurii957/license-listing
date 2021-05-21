@@ -1,4 +1,4 @@
-Package name,Package version,Package name prefix,License types,Declared Licenses
+Package name,Package version,Package name prefix,License type,Declared License
 antlr,2.7.7,antlr,BSD License,BSD-Equivalent
 logback-classic,1.2.3,ch.qos.logback,None,None
 logback-core,1.2.3,ch.qos.logback,None,None
