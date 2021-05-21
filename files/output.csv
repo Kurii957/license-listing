@@ -1,94 +1,94 @@
 Package name,Package version,Package name prefix,License type,Declared License,Package URL,License URL
-antlr,2.7.7,antlr,BSD License,BSD-Equivalent,http://www.antlr.org/,http://www.antlr.org/license.html
-logback-classic,1.2.3,ch.qos.logback,None,None,http://logback.qos.ch/logback-access,http://www.eclipse.org/legal/epl-v10.html
-logback-core,1.2.3,ch.qos.logback,None,None,http://logback.qos.ch/logback-classic,http://www.eclipse.org/legal/epl-v10.html
-classmate,1.5.1,com.fasterxml,Apache License Version 2.0,Apache-2.0,http://logback.qos.ch/logback-core,http://www.eclipse.org/legal/epl-v10.html
-jackson-annotations,2.11.4,com.fasterxml.jackson.core,The Apache Software License Version 2.0,Apache-2.0,http://www.atomikos.com/ate/transactions-jdbc/,http://www.atomikos.com/Main/WhichLicenseApplies
-jackson-core,2.11.4,com.fasterxml.jackson.core,The Apache Software License Version 2.0,Apache-2.0,http://www.atomikos.com/ate/transactions-jms/,http://www.atomikos.com/Main/WhichLicenseApplies
-jackson-databind,2.11.4,com.fasterxml.jackson.core,The Apache Software License Version 2.0,Apache-2.0,http://www.atomikos.com/ate/transactions-jta/,http://www.atomikos.com/Main/WhichLicenseApplies
-jackson-datatype-jdk8,2.11.4,com.fasterxml.jackson.datatype,The Apache Software License Version 2.0,Apache-2.0,https://couchbase.com/java-client,http://www.apache.org/licenses/LICENSE-2.0.txt
-jackson-datatype-jsr310,2.11.4,com.fasterxml.jackson.datatype,The Apache Software License Version 2.0,Apache-2.0,https://github.com/datastax/java-driver/java-driver-core,http://www.apache.org/licenses/LICENSE-2.0.txt
-jackson-module-parameter-names,2.11.4,com.fasterxml.jackson.module,The Apache Software License Version 2.0,Apache-2.0,https://github.com/datastax/java-driver/java-driver-core-shaded,http://www.apache.org/licenses/LICENSE-2.0.txt
-h2,1.4.200,com.h2database,MPL 2.0 or EPL 1.0,MPL-2.0,https://github.com/datastax/java-driver/java-driver-mapper-processor,http://www.apache.org/licenses/LICENSE-2.0.txt
-json-path,2.4.0,com.jayway.jsonpath,The Apache Software License Version 2.0,Apache-2.0,https://github.com/datastax/java-driver/java-driver-mapper-runtime,http://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.activation,1.2.2,com.sun.activation,EDL 1.0,EDL-1.0,https://github.com/datastax/java-driver/java-driver-metrics-micrometer,http://www.apache.org/licenses/LICENSE-2.0.txt
-HikariCP,3.4.5,com.zaxxer,The Apache Software License Version 2.0,Apache-2.0,https://github.com/datastax/java-driver/java-driver-metrics-microprofile,http://www.apache.org/licenses/LICENSE-2.0.txt
-micrometer-core,1.6.6,io.micrometer,The Apache Software License Version 2.0,Apache-2.0,https://github.com/datastax/java-driver/java-driver-query-builder,http://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.activation-api,1.2.2,jakarta.activation,EDL 1.0,EDL-1.0,https://github.com/datastax/java-driver-shaded-guava,http://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.annotation-api,1.3.5,jakarta.annotation,None,None,https://github.com/datastax/java-driver/java-driver-test-infra,http://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.persistence-api,2.2.3,jakarta.persistence,None,None,https://github.com/datastax/native-protocol,http://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.transaction-api,1.3.3,jakarta.transaction,None,None,https://github.com/FasterXML/java-classmate,https://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.validation-api,2.0.2,jakarta.validation,Apache License 2.0,Apache-2.0,http://github.com/FasterXML/jackson,http://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.xml.bind-api,2.3.3,jakarta.xml.bind,Eclipse Distribution License - v 1.0,EDL-1.0,https://github.com/FasterXML/jackson-core,http://www.apache.org/licenses/LICENSE-2.0.txt
-cache-api,1.1.1,javax.cache,Apache License Version 2.0,Apache-2.0,http://github.com/FasterXML/jackson,http://www.apache.org/licenses/LICENSE-2.0.txt
-mysql-connector-java,8.0.23,mysql,The GNU General Public License v2 with FOSS exception,The GNU General Public License v2 with FOSS exception,http://github.com/FasterXML/jackson-dataformats-binary,http://www.apache.org/licenses/LICENSE-2.0.txt
-byte-buddy,1.10.22,net.bytebuddy,Apache License Version 2.0,Apache-2.0,http://github.com/FasterXML/jackson-dataformats-binary,http://www.apache.org/licenses/LICENSE-2.0.txt
-byte-buddy-agent,1.10.22,net.bytebuddy,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-dataformats-text,http://www.apache.org/licenses/LICENSE-2.0.txt
-json-smart,2.3,net.minidev,The Apache Software License Version 2.0,Apache-2.0,http://github.com/FasterXML/jackson-dataformat-ion,http://www.apache.org/licenses/LICENSE-2.0.txt
-log4j-api,2.13.3,org.apache.logging.log4j,Apache License Version 2.0,Apache-2.0,http://github.com/FasterXML/jackson-dataformats-text,http://www.apache.org/licenses/LICENSE-2.0.txt
-log4j-to-slf4j,2.13.3,org.apache.logging.log4j,Apache License Version 2.0,Apache-2.0,http://github.com/FasterXML/jackson-dataformats-binary,http://www.apache.org/licenses/LICENSE-2.0.txt
-tomcat-embed-core,9.0.45,org.apache.tomcat.embed,Apache License Version 2.0,Apache-2.0,http://github.com/FasterXML/jackson-dataformats-binary,http://www.apache.org/licenses/LICENSE-2.0.txt
-tomcat-embed-websocket,9.0.45,org.apache.tomcat.embed,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-dataformat-xml,http://www.apache.org/licenses/LICENSE-2.0.txt
-aspectjweaver,1.9.6,org.aspectj,Eclipse Public License - v 1.0,EPL-1.0,https://github.com/FasterXML/jackson-dataformats-text,http://www.apache.org/licenses/LICENSE-2.0.txt
-assertj-core,3.18.1,org.assertj,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-datatypes-collections,http://www.apache.org/licenses/LICENSE-2.0.txt
-ehcache,3.9.2,org.ehcache,The Apache Software License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-datatypes-collections,http://www.apache.org/licenses/LICENSE-2.0.txt
-jakarta.el,3.0.3,org.glassfish,None,None,https://github.com/FasterXML/jackson-datatype-hibernate,http://www.apache.org/licenses/LICENSE-2.0.txt
-jaxb-runtime,2.3.4,org.glassfish.jaxb,Eclipse Distribution License - v 1.0,EDL-1.0,https://github.com/FasterXML/jackson-datatype-hibernate,http://www.apache.org/licenses/LICENSE-2.0.txt
-txw2,2.3.4,org.glassfish.jaxb,Eclipse Distribution License - v 1.0,EDL-1.0,https://github.com/FasterXML/jackson-datatype-hibernate,http://www.apache.org/licenses/LICENSE-2.0.txt
-hamcrest,2.2,org.hamcrest,BSD License 3,BSD-3-Clause,https://github.com/FasterXML/jackson-datatypes-collections,http://www.apache.org/licenses/LICENSE-2.0.txt
-hibernate-core,5.4.30.Final,org.hibernate,GNU Library General Public License v2.1 or later,GNU Library General Public License v2.1 or later,http://github.com/FasterXML/jackson-jaxrs-providers/jackson-datatype-jaxrs,http://www.apache.org/licenses/LICENSE-2.0.txt
-hibernate-validator,6.1.7.Final,org.hibernate.validator,Apache License 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jdk8,http://www.apache.org/licenses/LICENSE-2.0.txt
-jboss-logging,3.4.1.Final,org.jboss.logging,Apache License version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-datatype-joda,http://www.apache.org/licenses/LICENSE-2.0.txt
-junit-jupiter,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0,http://github.com/FasterXML/jackson-datatypes-misc,http://www.apache.org/licenses/LICENSE-2.0.txt
-junit-jupiter-api,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0,http://github.com/FasterXML/jackson-datatypes-misc,http://www.apache.org/licenses/LICENSE-2.0.txt
-junit-jupiter-engine,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0,https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310,http://www.apache.org/licenses/LICENSE-2.0.txt
-junit-jupiter-params,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0,http://github.com/FasterXML/jackson-datatypes-misc,http://www.apache.org/licenses/LICENSE-2.0.txt
-junit-platform-commons,1.7.1,org.junit.platform,Eclipse Public License v2.0,EPL-1.0,https://github.com/FasterXML/jackson-datatypes-collections,http://www.apache.org/licenses/LICENSE-2.0.txt
-junit-platform-engine,1.7.1,org.junit.platform,Eclipse Public License v2.0,EPL-1.0,http://github.com/FasterXML/jackson-jaxrs-providers/jackson-jaxrs-base,http://www.apache.org/licenses/LICENSE-2.0.txt
-mockito-core,3.6.28,org.mockito,The MIT License,MIT,http://github.com/FasterXML/jackson-jaxrs-providers/jackson-jaxrs-cbor-provider,http://www.apache.org/licenses/LICENSE-2.0.txt
-mockito-junit-jupiter,3.6.28,org.mockito,The MIT License,MIT,http://github.com/FasterXML/jackson-jaxrs-providers/jackson-jaxrs-json-provider,http://www.apache.org/licenses/LICENSE-2.0.txt
-jsonassert,1.5.0,org.skyscreamer,The Apache Software License Version 2.0,Apache-2.0,http://github.com/FasterXML/jackson-jaxrs-providers/jackson-jaxrs-smile-provider,http://www.apache.org/licenses/LICENSE-2.0.txt
-jul-to-slf4j,1.7.30,org.slf4j,MIT License,MIT,http://github.com/FasterXML/jackson-jaxrs-providers/jackson-jaxrs-xml-provider,http://www.apache.org/licenses/LICENSE-2.0.txt
-slf4j-api,1.7.30,org.slf4j,MIT License,MIT,http://github.com/FasterXML/jackson-jaxrs-providers/jackson-jaxrs-yaml-provider,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-aop,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,http://wiki.fasterxml.com/JacksonHome,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-aspects,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-jr,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-beans,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,http://wiki.fasterxml.com/JacksonHome,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-context,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-jr/jackson-jr-retrofit2,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-context-support,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-jr,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-core,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-base,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-expression,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-base,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-jcl,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-base,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-jdbc,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-module-jsonSchema,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-orm,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-module-kotlin,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-test,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-base,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-tx,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-base,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-web,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-java8/jackson-module-parameter-names,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-webmvc,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/FasterXML/jackson-modules-base,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://github.com/ben-manes/caffeine,https://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-actuator,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://github.com/ben-manes/caffeine,https://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-actuator-autoconfigure,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://github.com/ben-manes/caffeine,https://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-autoconfigure,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://github.com/ben-manes/caffeine,https://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-devtools,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://github.com/mxab/thymeleaf-extras-data-attribute,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-starter,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://cloud.google.com/appengine/docs/standard/java/javadoc/appengine-api-1.0-sdk/,https://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-starter-actuator,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://github.com/GoogleCloudPlatform/cloud-spanner-r2dbc/tree/master/cloud-spanner-r2dbc,https://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-starter-aop,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://github.com/google/gson/gson,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-starter-cache,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://h2database.com,https://h2database.com/html/license.html
-spring-boot-starter-data-jpa,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.hazelcast.com/hazelcast/,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-starter-jdbc,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.hazelcast.com/,http://hazelcast.com/hazelcast-community-license
-spring-boot-starter-json,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.hazelcast.com/,http://hazelcast.com/hazelcast-community-license
-spring-boot-starter-logging,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.hazelcast.com/hazelcast-spring/,http://www.apache.org/licenses/LICENSE-2.0.txt
-spring-boot-starter-test,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www-03.ibm.com/software/sla/sladb.nsf/lilookup/179A6D1769B0A44D8525862400329FB8?OpenDocument,https://github.com/jayway/JsonPath
-spring-boot-starter-thymeleaf,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.apache.org/licenses/LICENSE-2.0.txt,https://github.com/jayway/JsonPath
-spring-boot-starter-tomcat,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.apache.org/licenses/LICENSE-2.0.txt,https://github.com/Microsoft/mssql-jdbc
-spring-boot-starter-validation,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.opensource.org/licenses/mit-license.php,https://bitbucket.org/connect2id/nimbus-jose-jwt
-spring-boot-starter-web,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.apache.org/licenses/LICENSE-2.0.txt,https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions
-spring-boot-test,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,http://www.apache.org/licenses/LICENSE-2.0.html‎,https://www.oracle.com/database/technologies/maven-central-guide.html
-spring-boot-test-autoconfigure,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-spring-data-commons,2.4.8,org.springframework.data,Apache License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-spring-data-jpa,2.4.8,org.springframework.data,Apache License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-thymeleaf,3.0.12.RELEASE,org.thymeleaf,The Apache Software License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-thymeleaf-spring5,3.0.12.RELEASE,org.thymeleaf,The Apache Software License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-thymeleaf-extras-java8time,3.0.4.RELEASE,org.thymeleaf.extras,The Apache Software License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-webjars-locator-core,0.46,org.webjars,MIT,MIT,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-xmlunit-core,2.7.0,org.xmlunit,The Apache Software License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
-snakeyaml,1.27,org.yaml,Apache License Version 2.0,Apache-2.0,https://www.oracle.com/downloads/licenses/oracle-free-license.html,https://www.oracle.com/database/technologies/maven-central-guide.html
+antlr,2.7.7,antlr,BSD License,BSD-Equivalent
+logback-classic,1.2.3,ch.qos.logback,None,None
+logback-core,1.2.3,ch.qos.logback,None,None
+classmate,1.5.1,com.fasterxml,Apache License Version 2.0,Apache-2.0
+jackson-annotations,2.11.4,com.fasterxml.jackson.core,The Apache Software License Version 2.0,Apache-2.0
+jackson-core,2.11.4,com.fasterxml.jackson.core,The Apache Software License Version 2.0,Apache-2.0
+jackson-databind,2.11.4,com.fasterxml.jackson.core,The Apache Software License Version 2.0,Apache-2.0
+jackson-datatype-jdk8,2.11.4,com.fasterxml.jackson.datatype,The Apache Software License Version 2.0,Apache-2.0
+jackson-datatype-jsr310,2.11.4,com.fasterxml.jackson.datatype,The Apache Software License Version 2.0,Apache-2.0
+jackson-module-parameter-names,2.11.4,com.fasterxml.jackson.module,The Apache Software License Version 2.0,Apache-2.0
+h2,1.4.200,com.h2database,MPL 2.0 or EPL 1.0,MPL-2.0
+json-path,2.4.0,com.jayway.jsonpath,The Apache Software License Version 2.0,Apache-2.0
+jakarta.activation,1.2.2,com.sun.activation,EDL 1.0,EDL-1.0
+HikariCP,3.4.5,com.zaxxer,The Apache Software License Version 2.0,Apache-2.0
+micrometer-core,1.6.6,io.micrometer,The Apache Software License Version 2.0,Apache-2.0
+jakarta.activation-api,1.2.2,jakarta.activation,EDL 1.0,EDL-1.0
+jakarta.annotation-api,1.3.5,jakarta.annotation,None,None
+jakarta.persistence-api,2.2.3,jakarta.persistence,None,None
+jakarta.transaction-api,1.3.3,jakarta.transaction,None,None
+jakarta.validation-api,2.0.2,jakarta.validation,Apache License 2.0,Apache-2.0
+jakarta.xml.bind-api,2.3.3,jakarta.xml.bind,Eclipse Distribution License - v 1.0,EDL-1.0
+cache-api,1.1.1,javax.cache,Apache License Version 2.0,Apache-2.0
+mysql-connector-java,8.0.23,mysql,The GNU General Public License v2 with FOSS exception,The GNU General Public License v2 with FOSS exception
+byte-buddy,1.10.22,net.bytebuddy,Apache License Version 2.0,Apache-2.0
+byte-buddy-agent,1.10.22,net.bytebuddy,Apache License Version 2.0,Apache-2.0
+json-smart,2.3,net.minidev,The Apache Software License Version 2.0,Apache-2.0
+log4j-api,2.13.3,org.apache.logging.log4j,Apache License Version 2.0,Apache-2.0
+log4j-to-slf4j,2.13.3,org.apache.logging.log4j,Apache License Version 2.0,Apache-2.0
+tomcat-embed-core,9.0.45,org.apache.tomcat.embed,Apache License Version 2.0,Apache-2.0
+tomcat-embed-websocket,9.0.45,org.apache.tomcat.embed,Apache License Version 2.0,Apache-2.0
+aspectjweaver,1.9.6,org.aspectj,Eclipse Public License - v 1.0,EPL-1.0
+assertj-core,3.18.1,org.assertj,Apache License Version 2.0,Apache-2.0
+ehcache,3.9.2,org.ehcache,The Apache Software License Version 2.0,Apache-2.0
+jakarta.el,3.0.3,org.glassfish,None,None
+jaxb-runtime,2.3.4,org.glassfish.jaxb,Eclipse Distribution License - v 1.0,EDL-1.0
+txw2,2.3.4,org.glassfish.jaxb,Eclipse Distribution License - v 1.0,EDL-1.0
+hamcrest,2.2,org.hamcrest,BSD License 3,BSD-3-Clause
+hibernate-core,5.4.30.Final,org.hibernate,GNU Library General Public License v2.1 or later,GNU Library General Public License v2.1 or later
+hibernate-validator,6.1.7.Final,org.hibernate.validator,Apache License 2.0,Apache-2.0
+jboss-logging,3.4.1.Final,org.jboss.logging,Apache License version 2.0,Apache-2.0
+junit-jupiter,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0
+junit-jupiter-api,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0
+junit-jupiter-engine,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0
+junit-jupiter-params,5.7.1,org.junit.jupiter,Eclipse Public License v2.0,EPL-1.0
+junit-platform-commons,1.7.1,org.junit.platform,Eclipse Public License v2.0,EPL-1.0
+junit-platform-engine,1.7.1,org.junit.platform,Eclipse Public License v2.0,EPL-1.0
+mockito-core,3.6.28,org.mockito,The MIT License,MIT
+mockito-junit-jupiter,3.6.28,org.mockito,The MIT License,MIT
+jsonassert,1.5.0,org.skyscreamer,The Apache Software License Version 2.0,Apache-2.0
+jul-to-slf4j,1.7.30,org.slf4j,MIT License,MIT
+slf4j-api,1.7.30,org.slf4j,MIT License,MIT
+spring-aop,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-aspects,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-beans,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-context,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-context-support,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-core,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-expression,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-jcl,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-jdbc,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-orm,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-test,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-tx,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-web,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-webmvc,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0
+spring-boot,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-actuator,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-actuator-autoconfigure,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-autoconfigure,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-devtools,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-actuator,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-aop,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-cache,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-data-jpa,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-jdbc,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-json,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-logging,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-test,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-thymeleaf,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-tomcat,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-validation,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-starter-web,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-test,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-boot-test-autoconfigure,2.4.5,org.springframework.boot,Apache License Version 2.0,Apache-2.0
+spring-data-commons,2.4.8,org.springframework.data,Apache License Version 2.0,Apache-2.0
+spring-data-jpa,2.4.8,org.springframework.data,Apache License Version 2.0,Apache-2.0
+thymeleaf,3.0.12.RELEASE,org.thymeleaf,The Apache Software License Version 2.0,Apache-2.0
+thymeleaf-spring5,3.0.12.RELEASE,org.thymeleaf,The Apache Software License Version 2.0,Apache-2.0
+thymeleaf-extras-java8time,3.0.4.RELEASE,org.thymeleaf.extras,The Apache Software License Version 2.0,Apache-2.0
+webjars-locator-core,0.46,org.webjars,MIT,MIT
+xmlunit-core,2.7.0,org.xmlunit,The Apache Software License Version 2.0,Apache-2.0
+snakeyaml,1.27,org.yaml,Apache License Version 2.0,Apache-2.0
