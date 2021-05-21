@@ -1,3 +1,10 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< org.springframework.samples:spring-petclinic >------------
+[INFO] Building petclinic 2.4.5
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.2:tree (default-cli) @ spring-petclinic ---
 [INFO] org.springframework.samples:spring-petclinic:jar:2.4.5
 [INFO] +- org.springframework.boot:spring-boot-starter-actuator:jar:2.4.5:compile
 [INFO] |  +- org.springframework.boot:spring-boot-starter:jar:2.4.5:compile
@@ -111,3 +118,9 @@
 [INFO] \- org.springframework.boot:spring-boot-devtools:jar:2.4.5:compile (optional) 
 [INFO]    +- org.springframework.boot:spring-boot:jar:2.4.5:compile
 [INFO]    \- org.springframework.boot:spring-boot-autoconfigure:jar:2.4.5:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.458 s
+[INFO] Finished at: 2021-05-13T12:57:28+02:00
+[INFO] ------------------------------------------------------------------------
