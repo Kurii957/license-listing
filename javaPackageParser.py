@@ -58,7 +58,7 @@ class JavaPackageParser:
         try:
             to_csv = open(self.output, "w")
             keys = []
-            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type" + sep + "Declared License\n")
+            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License types" + sep + "Declared Licenses\n")
             """
             for key in no_duplicates.keys():
                 keys.append(key)
