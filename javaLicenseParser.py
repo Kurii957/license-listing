@@ -39,13 +39,14 @@ class JavaLicenseParser:
             all_parameters = package_name + sep + package_version + sep + package_prefix
 
             license_type_for_td.setdefault(all_parameters, license_type)
-
+        k = 0
         for key in license_type_for_td.keys():
             if no_duplicates.get(key):
-                all_values.append(key+sep+license_type_for_td[key])
+                all_values.append(key + sep + license_type_for_td[key])
+                k+=2
 
 
-        return all_values, a_values
+        return all_values
 
     def get_declared_license(self, license_type):
         declared_licenses = {}
