@@ -12,6 +12,8 @@ class JavaLicenseParser:
         all_values = []
         sep = ","
         license_type_for_td = {}
+
+        # Finding all td values in table
         for tr in soup.table:
             for td in tr:
                 if td != "\n":
@@ -19,11 +21,14 @@ class JavaLicenseParser:
                     if td.a != None:
                         a_values.append(td.a.get('href'))
 
+        # Separating specific td values
         for i in range(0, len(td_values) - 6, 6):
             package_name = str(td_values[i + 1])
             package_version = str(td_values[i + 2])
             package_prefix = str(td_values[i])
             license_type = str(td_values[i + 5])
+
+            # Removing commas from license types
             license_type_split = license_type.split(",")
             join_string = ""
             try:
@@ -31,24 +36,24 @@ class JavaLicenseParser:
             except:
                 license_type = license_type
 
-            # ----------------------------------
+            # Getting declared licenses
             declared_license = self.get_declared_license(license_type)
             license_type += sep+declared_license
-            # ----------------------------------
 
             all_parameters = package_name + sep + package_version + sep + package_prefix
 
             license_type_for_td.setdefault(all_parameters, license_type)
-        k = 0
+
+        # Matching keys from both dictionaries
         for key in license_type_for_td.keys():
             if no_duplicates.get(key):
                 all_values.append(key + sep + license_type_for_td[key])
-                k+=2
-
 
         return all_values
 
     def get_declared_license(self, license_type):
+
+        # The dictionary of the possible license types
         declared_licenses = {}
         declared_licenses["Apache-2.0"] = ("Apache", "ASL", "Apache Software Licenses", "The Apache")
         declared_licenses["MIT"] = ("MIT", "The MIT")
@@ -66,7 +71,7 @@ class JavaLicenseParser:
         declared_licenses["Public Domain"] = ("Public Domain", "Public Domain")
         declared_licenses["None"] = ("None", "None")
 
-        not_required_license = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
+        # not_required_license = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
         declared_license = ''
         k = 0
 
