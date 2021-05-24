@@ -1,12 +1,27 @@
 from bs4 import BeautifulSoup
 import os
-html_input = os.path.abspath("files/dependency-management.html")
-with open(html_input) as fp:
-    soup = BeautifulSoup(fp, 'html.parser')
+
 
 class JavaLicenseParser:
 
-    def get_license_type(self, no_duplicates):
+    SEPARATOR = ','
+
+    def __init__(self, input_license_file):
+        try:
+            with open(input_license_file) as fp:
+                self.soup = BeautifulSoup(fp, 'html.parser')
+                self.read_licenses()
+        except FileNotFoundError:
+            print("Can't open a licenses report file: ", input_license_file)
+
+    def get_license_type(self, package_name_prefix, package_name, package_version):
+
+        # kod do napisania
+        license_type = 'MIT'
+
+        return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_name_prefix + JavaLicenseParser.SEPARATOR + package_version, '----')
+
+    def read_licenses(self):
         td_values = []
         # a_values = []
         all_values = []
@@ -14,7 +29,8 @@ class JavaLicenseParser:
         license_type_for_td = {}
 
         # Finding all td values in table
-        for tr in soup.table:
+        for tr in self.soup.table:
+            td_values = []
             for td in tr:
                 if td != "\n":
                     td_values.append(td.string)
@@ -22,9 +38,7 @@ class JavaLicenseParser:
                         td_values.append(td.a.get('href'))
                     except:
                         m = 1
-
-        # Separating specific td values
-        for i in range(6, len(td_values) - 8, 8):
+            i = 0
             package_prefix = str(td_values[i])
             package_name = str(td_values[i + 1])
             package_url = str(td_values[i+2])
@@ -47,13 +61,8 @@ class JavaLicenseParser:
             all_parameters = package_name + sep + package_version + sep + package_prefix
             p = license_type + sep + package_url + sep + license_url
             license_type_for_td.setdefault(all_parameters, p)
+            self.licenses_list = license_type_for_td
 
-        # Matching keys from both dictionaries
-        for key in license_type_for_td.keys():
-            if no_duplicates.get(key):
-                all_values.append(key + sep + license_type_for_td[key])
-
-        return all_values
 
     def get_declared_license(self, license_type):
 
