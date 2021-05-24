@@ -22,7 +22,7 @@ class JavaLicenseParser:
         return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_name_prefix + JavaLicenseParser.SEPARATOR + package_version, '----')
 
     def read_licenses(self):
-        td_values = []
+        # td_values = []
         # a_values = []
         all_values = []
         sep = ","
@@ -43,8 +43,13 @@ class JavaLicenseParser:
             package_name = str(td_values[i + 1])
             package_url = str(td_values[i+2])
             package_version = str(td_values[i + 3])
-            license_type = str(td_values[i + 6])
-            license_url = str(td_values[i + 7])
+            try:
+                license_type = str(td_values[i + 6])
+                license_url = str(td_values[i + 7])
+            except:
+                license_type = "---"
+                license_url = "---"
+
 
             # Removing commas from license types
             license_type_split = license_type.split(",")
