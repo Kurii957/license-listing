@@ -68,10 +68,8 @@ class JavaPackageParser:
             """
             lp = JavaLicenseParser()
             all_values = lp.get_license_type(no_duplicates)
-            k = 0
             for key in all_values:
                 to_csv.write(key + "\n")
-                k += 2
 
             to_csv.close()
         except FileNotFoundError:

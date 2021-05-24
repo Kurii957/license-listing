@@ -8,7 +8,7 @@ class JavaLicenseParser:
 
     def get_license_type(self, no_duplicates):
         td_values = []
-        a_values = []
+        # a_values = []
         all_values = []
         sep = ","
         license_type_for_td = {}
@@ -18,15 +18,19 @@ class JavaLicenseParser:
             for td in tr:
                 if td != "\n":
                     td_values.append(td.string)
-                    if td.a != None:
-                        a_values.append(td.a.get('href'))
+                    try:
+                        td_values.append(td.a.get('href'))
+                    except:
+                        m = 1
 
         # Separating specific td values
-        for i in range(0, len(td_values) - 6, 6):
-            package_name = str(td_values[i + 1])
-            package_version = str(td_values[i + 2])
+        for i in range(6, len(td_values) - 8, 8):
             package_prefix = str(td_values[i])
-            license_type = str(td_values[i + 5])
+            package_name = str(td_values[i + 1])
+            package_url = str(td_values[i+2])
+            package_version = str(td_values[i + 3])
+            license_type = str(td_values[i + 6])
+            license_url = str(td_values[i + 7])
 
             # Removing commas from license types
             license_type_split = license_type.split(",")
@@ -35,14 +39,14 @@ class JavaLicenseParser:
                 license_type = join_string.join(license_type_split)
             except:
                 license_type = license_type
-
+            print(package_prefix, package_name, package_url, package_version, license_type, license_url)
             # Getting declared licenses
             declared_license = self.get_declared_license(license_type)
             license_type += sep+declared_license
 
             all_parameters = package_name + sep + package_version + sep + package_prefix
-
-            license_type_for_td.setdefault(all_parameters, license_type)
+            p = license_type + sep + package_url + sep + license_url
+            license_type_for_td.setdefault(all_parameters, p)
 
         # Matching keys from both dictionaries
         for key in license_type_for_td.keys():
