@@ -23,7 +23,6 @@ class JavaLicenseParser:
 
     def read_licenses(self):
         td_values = []
-        # a_values = []
         all_values = []
         sep = ","
         license_type_for_td = {}
