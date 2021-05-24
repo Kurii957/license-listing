@@ -19,10 +19,10 @@ class JavaLicenseParser:
         # kod do napisania
         license_type = 'MIT'
 
-        return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_name_prefix + JavaLicenseParser.SEPARATOR + package_version, '----')
+        return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '----')
 
     def read_licenses(self):
-        # td_values = []
+        td_values = []
         # a_values = []
         all_values = []
         sep = ","
@@ -31,26 +31,26 @@ class JavaLicenseParser:
         # Finding all td values in table
         for tr in self.soup.table:
             td_values = []
-            a_values = []
+            td_href = ['empty1', 'empty2']
+            m = 0
             for td in tr:
                 if td != "\n":
                     td_values.append(td.string)
                     try:
-                        a_values.append(td.a.get('href'))
+                        td_href[m] = td.a.get('href')
+                        m = m + 1
                     except:
-                        a_values.append("None")
-            i = 0
-            package_prefix = str(td_values[i])
-            package_name = str(td_values[i + 1])
-            package_version = str(td_values[i + 2])
-            license_type = str(td_values[i + 5])
-            try:
-                package_url = str(a_values[i])
-                license_url = str(a_values[i + 1])
-            except:
-                package_url = "---"
-                license_url = "---"
+                        a = 1
 
+            if len(td_values) == 0:
+                continue
+            i = 0
+            package_prefix = str(td_values[0])
+            package_name = str(td_values[1])
+            package_url = str(td_href[0])
+            package_version = str(td_values[2])
+            license_type = str(td_values[5])
+            license_url = str(td_href[1])
 
             # Removing commas from license types
             license_type_split = license_type.split(",")
