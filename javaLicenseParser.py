@@ -31,23 +31,24 @@ class JavaLicenseParser:
         # Finding all td values in table
         for tr in self.soup.table:
             td_values = []
+            a_values = []
             for td in tr:
                 if td != "\n":
                     td_values.append(td.string)
                     try:
-                        td_values.append(td.a.get('href'))
+                        a_values.append(td.a.get('href'))
                     except:
-                        m = 1
+                        a_values.append("None")
             i = 0
             package_prefix = str(td_values[i])
             package_name = str(td_values[i + 1])
-            package_url = str(td_values[i+2])
-            package_version = str(td_values[i + 3])
+            package_version = str(td_values[i + 2])
+            license_type = str(td_values[i + 5])
             try:
-                license_type = str(td_values[i + 6])
-                license_url = str(td_values[i + 7])
+                package_url = str(a_values[i])
+                license_url = str(a_values[i + 1])
             except:
-                license_type = "---"
+                package_url = "---"
                 license_url = "---"
 
 
