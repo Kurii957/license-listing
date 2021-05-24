@@ -68,6 +68,7 @@ class JavaPackageParser:
             """
             lp = JavaLicenseParser()
             all_values = lp.get_license_type(no_duplicates)
+            all_values = sorted(all_values, key=str.lower)
             for key in all_values:
                 to_csv.write(key + "\n")
 
