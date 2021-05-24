@@ -18,7 +18,7 @@ class JavaPackageParser:
         tab = self.open_file()
 
         # deleting unnecessary signs
-        for index in range(7, len(tab)-6):
+        for index in range(8, len(tab)-6):
             tab[index] = tab[index].lstrip("[INFO]")
             while tab[index].startswith("|") or tab[index].startswith(" ") or tab[index].startswith("+") or tab[
                 index].startswith("-") or tab[index].startswith("\\"):

@@ -98,7 +98,6 @@ spring-expression,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.
 spring-jcl,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/spring-projects/spring-framework,https://www.apache.org/licenses/LICENSE-2.0
 spring-jdbc,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/spring-projects/spring-framework,https://www.apache.org/licenses/LICENSE-2.0
 spring-orm,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/spring-projects/spring-framework,https://www.apache.org/licenses/LICENSE-2.0
-spring-petclinic,2.4.5,org.springframework.samples,-,-,-,-
 spring-test,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/spring-projects/spring-framework,https://www.apache.org/licenses/LICENSE-2.0
 spring-tx,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/spring-projects/spring-framework,https://www.apache.org/licenses/LICENSE-2.0
 spring-web,5.3.6,org.springframework,Apache License Version 2.0,Apache-2.0,https://github.com/spring-projects/spring-framework,https://www.apache.org/licenses/LICENSE-2.0

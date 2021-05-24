@@ -19,7 +19,7 @@ class JavaLicenseParser:
         # kod do napisania
         license_type = 'MIT'
 
-        return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '----')
+        return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '-,-,-,-')
 
     def read_licenses(self):
         all_values = []
@@ -48,11 +48,9 @@ class JavaLicenseParser:
             package_version = str(td_values[2])
             license_type = str(td_values[5])
             package_url = str(td_href[0])
+            package_url = str(td_href[0])
+            license_url = str(td_href[1])
 
-            if str(td_href[1]) != 'empty2':
-                license_url = str(td_href[1])
-            else:
-                license_url = str(td_href[0])
 
             # Removing commas from license types
             license_type_split = license_type.split(",")
