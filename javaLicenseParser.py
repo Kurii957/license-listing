@@ -40,7 +40,7 @@ class JavaLicenseParser:
             package_name = str(td_values[1])
             package_version = str(td_values[2])
             license_type = str(td_values[5])
-            package_url = str(td_href[0])
+            package_url = str('https://mvnrepository.com/artifact/'  + package_prefix + '/' + package_name + '/' + package_version)
             license_url = str(td_href[1])
 
 
