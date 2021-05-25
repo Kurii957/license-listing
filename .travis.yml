@@ -7,11 +7,8 @@ stages:
 
 jobs:
   include:
-    - stage: bs4
-      name: bs4 install
-      script:
-        - sudo pip install BeatifulSoup4
     - stage: test1
       name: test1 nazwa
       script:
+        - sudo pip install BeatifulSoup4
         - python -m pytest test/
