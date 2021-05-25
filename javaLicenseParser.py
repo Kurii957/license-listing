@@ -1,6 +1,4 @@
 from bs4 import BeautifulSoup
-import os
-
 
 class JavaLicenseParser:
 
@@ -15,10 +13,6 @@ class JavaLicenseParser:
             print("Can't open a licenses report file: ", input_license_file)
 
     def get_license_type(self, package_name_prefix, package_name, package_version):
-
-        # kod do napisania
-        license_type = 'MIT'
-
         return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '-,-,-,-')
 
     def read_licenses(self):
@@ -42,12 +36,10 @@ class JavaLicenseParser:
 
             if len(td_values) == 0:
                 continue
-            i = 0
             package_prefix = str(td_values[0])
             package_name = str(td_values[1])
             package_version = str(td_values[2])
             license_type = str(td_values[5])
-            package_url = str(td_href[0])
             package_url = str(td_href[0])
             license_url = str(td_href[1])
 
@@ -59,7 +51,7 @@ class JavaLicenseParser:
                 license_type = join_string.join(license_type_split)
             except:
                 license_type = license_type
-            print(package_prefix, package_name, package_url, package_version, license_type, license_url)
+
             # Getting declared licenses
             declared_license = self.get_declared_license(license_type)
             license_type += sep+declared_license

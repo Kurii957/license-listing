@@ -6,7 +6,7 @@ from javaPackageParser import JavaPackageParser
 class TestJavaPackageParser(TestCase):
 
     def get_tested_object(self):
-        return JavaPackageParser('', '')
+        return JavaPackageParser('', '', '')
 
     def test_set_version(self):
 
@@ -23,7 +23,7 @@ class TestJavaPackageParser(TestCase):
         
     def test_run(self):
         out_file = 'tmp/java_packages.csv'
-        pp = JavaPackageParser('files/dep_tree_out.txt', out_file)
+        pp = JavaPackageParser('files/dep_tree_out.txt', 'files/dependency-management.html', out_file)
         pp.run()
 
         self.assertTrue(filecmp.cmp('files/output.csv', out_file));
