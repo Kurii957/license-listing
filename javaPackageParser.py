@@ -5,11 +5,12 @@ class JavaPackageParser:
 
     def __init__(self, input_packages_file, input_licenses_file, output_file):
         self.input_packages = os.path.abspath(input_packages_file)
-        self.input_licenses = input_licenses_file
+        self.input_licenses = os.path.abspath(input_licenses_file)
         self.output = os.path.abspath(output_file)
-        self.licenseParser = JavaLicenseParser(self.input_licenses)
+        self.licenseParser = None
 
     def run(self):
+        self.licenseParser = JavaLicenseParser(self.input_licenses)
 
         all_names = []
         sep = ","
