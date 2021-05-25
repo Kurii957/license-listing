@@ -11,3 +11,6 @@ jobs:
       name: test1 nazwa
       script:
         - python -m pytest test/
+        
+before_install:
+- sudo pip install BeatifulSoup4
