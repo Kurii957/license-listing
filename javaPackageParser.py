@@ -8,6 +8,7 @@ class JavaPackageParser:
         self.input_licenses = os.path.abspath(input_licenses_file)
         self.output = os.path.abspath(output_file)
         self.licenseParser = None
+        print("Running scanner on: \n", self.input_packages, "\n", self.input_licenses, "\n", self.output)
 
     def run(self):
         self.licenseParser = JavaLicenseParser(self.input_licenses)
