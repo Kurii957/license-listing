@@ -10,6 +10,4 @@ jobs:
     - stage: test1
       name: test1 nazwa
       script:
-        - sudo apt install python3-pip
-        - sudo pip install BeatifulSoup4
         - python -m pytest test/
