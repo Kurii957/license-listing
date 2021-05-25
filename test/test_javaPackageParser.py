@@ -1,3 +1,4 @@
+import os
 from unittest import TestCase
 import filecmp
 
@@ -22,7 +23,7 @@ class TestJavaPackageParser(TestCase):
         self.assertEqual('', res)
         
     def test_run(self):
-        out_file = 'tmp/java_packages.csv'
+        out_file = os.path.abspath('tmp/java_packages.csv')
         pp = JavaPackageParser('files/dep_tree_out.txt', 'files/dependency-management.html', out_file)
         pp.run()
 
