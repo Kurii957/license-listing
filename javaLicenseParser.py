@@ -1,27 +1,50 @@
 from bs4 import BeautifulSoup
-with open("files/dependency-management.html") as fp:
-    soup = BeautifulSoup(fp, 'html.parser')
 
 class JavaLicenseParser:
 
-    def get_license_type(self, no_duplicates):
-        td_values = []
-        a_values = []
+    SEPARATOR = ','
+
+    def __init__(self, input_license_file):
+        try:
+            with open(input_license_file) as fp:
+                self.soup = BeautifulSoup(fp, 'html.parser')
+                self.read_licenses()
+        except FileNotFoundError:
+            print("Can't open a licenses report file: ", input_license_file)
+
+    def get_license_type(self, package_name_prefix, package_name, package_version):
+        return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '-,-,-,-')
+
+    def read_licenses(self):
         all_values = []
         sep = ","
         license_type_for_td = {}
-        for tr in soup.table:
+
+        # Finding all td values in table
+        for tr in self.soup.table:
+            td_values = []
+            td_href = ['empty1', 'empty2']
+            m = 0
             for td in tr:
                 if td != "\n":
                     td_values.append(td.string)
-                    if td.a != None:
-                        a_values.append(td.a.get('href'))
+                    try:
+                        td_href[m] = td.a.get('href')
+                        m = m + 1
+                    except:
+                        a = 1
 
-        for i in range(0, len(td_values) - 6, 6):
-            package_name = str(td_values[i + 1])
-            package_version = str(td_values[i + 2])
-            package_prefix = str(td_values[i])
-            license_type = str(td_values[i + 5])
+            if len(td_values) == 0:
+                continue
+            package_prefix = str(td_values[0])
+            package_name = str(td_values[1])
+            package_version = str(td_values[2])
+            license_type = str(td_values[5])
+            package_url = str('https://mvnrepository.com/artifact/'  + package_prefix + '/' + package_name + '/' + package_version)
+            license_url = str(td_href[1])
+
+
+            # Removing commas from license types
             license_type_split = license_type.split(",")
             join_string = ""
             try:
@@ -29,23 +52,19 @@ class JavaLicenseParser:
             except:
                 license_type = license_type
 
-            # ----------------------------------
+            # Getting declared licenses
             declared_license = self.get_declared_license(license_type)
             license_type += sep+declared_license
-            # ----------------------------------
 
             all_parameters = package_name + sep + package_version + sep + package_prefix
+            p = license_type + sep + package_url + sep + license_url
+            license_type_for_td.setdefault(all_parameters, p)
+            self.licenses_list = license_type_for_td
 
-            license_type_for_td.setdefault(all_parameters, license_type)
-
-        for key in license_type_for_td.keys():
-            if no_duplicates.get(key):
-                all_values.append(key+sep+license_type_for_td[key])
-
-
-        return all_values, a_values
 
     def get_declared_license(self, license_type):
+
+        # The dictionary of the possible license types
         declared_licenses = {}
         declared_licenses["Apache-2.0"] = ("Apache", "ASL", "Apache Software Licenses", "The Apache")
         declared_licenses["MIT"] = ("MIT", "The MIT")
@@ -63,7 +82,7 @@ class JavaLicenseParser:
         declared_licenses["Public Domain"] = ("Public Domain", "Public Domain")
         declared_licenses["None"] = ("None", "None")
 
-        not_required_license = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
+        # not_required_license = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
         declared_license = ''
         k = 0
 
