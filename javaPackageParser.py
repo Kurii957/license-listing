@@ -43,10 +43,14 @@ class JavaPackageParser:
             # setting the version
             packet_version = self.get_version(s, help)
 
+            # getting the license
             package_license = self.licenseParser.get_license_type(packet_prefix, packet_name, packet_version)
 
+            # getting the copyrights
+            copyrights = self.licenseParser.get_copyrights(packet_prefix, packet_name, packet_version)
+
             # moving data to table
-            all = packet_name + sep + packet_version + sep + packet_prefix + sep + package_license
+            all = packet_name + sep + packet_version + sep + packet_prefix + sep + package_license + sep + copyrights
             all_names.append(all)
 
             index += 1
@@ -64,7 +68,7 @@ class JavaPackageParser:
         try:
             to_csv = open(self.output, "w")
             keys = []
-            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type" + sep + "Declared License" + sep + "Package URL" + sep + "License URL\n")
+            to_csv.write("Package name" + sep + "Package version" + sep + "Package name prefix" + sep + "License type" + sep + "Declared License" + sep + "Package URL" + sep + "License URL" + sep + "Copyrights\n")
 
             for key in no_duplicates.keys():
                 keys.append(key)

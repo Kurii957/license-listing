@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from javaCopyrightsParser import JavaCopyrightsParser
 
 class JavaLicenseParser:
 
@@ -12,13 +13,19 @@ class JavaLicenseParser:
         except FileNotFoundError:
             print("Can't open a licenses report file: ", input_license_file)
 
+        self.copyrightsParser = None
+
     def get_license_type(self, package_name_prefix, package_name, package_version):
         return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '-,-,-,-')
+
+    def get_copyrights(self, package_name_prefix, package_name, package_version):
+        return self.copyrights_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, 'No copyrights')
 
     def read_licenses(self):
         all_values = []
         sep = ","
         license_type_for_td = {}
+        copyrights_for_license = {}
 
         # Finding all td values in table
         for tr in self.soup.table:
@@ -43,7 +50,6 @@ class JavaLicenseParser:
             package_url = str('https://mvnrepository.com/artifact/'  + package_prefix + '/' + package_name + '/' + package_version)
             license_url = str(td_href[1])
 
-
             # Removing commas from license types
             license_type_split = license_type.split(",")
             join_string = ""
@@ -56,10 +62,29 @@ class JavaLicenseParser:
             declared_license = self.get_declared_license(license_type)
             license_type += sep+declared_license
 
+            # Getting copyrights
+            self.copyrightsParser = JavaCopyrightsParser()
+
+            not_required_licenses = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
+            bool = True
+
+            for license in not_required_licenses:
+                if license == declared_license:
+                    bool = False
+
+            if bool:
+                try:
+                    copyright = self.copyrightsParser.read_copyrigths(license_url)
+                except:
+                    copyright = "HTTP Error 403: Forbidden"
+
             all_parameters = package_name + sep + package_version + sep + package_prefix
             p = license_type + sep + package_url + sep + license_url
             license_type_for_td.setdefault(all_parameters, p)
             self.licenses_list = license_type_for_td
+
+            copyrights_for_license.setdefault(all_parameters, copyright)
+            self.copyrights_list = copyrights_for_license
 
 
     def get_declared_license(self, license_type):
@@ -72,8 +97,8 @@ class JavaLicenseParser:
         declared_licenses["BSD-3-Clause"] = ("BSD-3-Clause", "BSD 3-Clause", "BSD License 3")
         declared_licenses["BSD-Equivalent"] = ("BSD-Equivalent", "BSD", "BSD License")
         declared_licenses["ISC"] = ("ISC", "ISC")
-        declared_licenses["EPL-1.0"] = ("EPL-1.0", "Eclipse Public License")
-        declared_licenses["EPL-2.0"] = ("EPL-2.0", "Eclipse Public License")
+        declared_licenses["EPL-1.0"] = ("EPL-1.0", "EPL 1.0", "Eclipse Public License")
+        declared_licenses["EPL-2.0"] = ("EPL-2.0", "EPL 2.0", "Eclipse Public License")
         declared_licenses["EDL-1.0"] = ("EDL-1.0", "EDL 1.0", "Eclipse Distribution")
         declared_licenses["MPL-2.0"] = ("MPL-2.0", "MPL 2.0")
         declared_licenses["CDDL-1.0"] = ("CDDL-1.0", "CDDL 1.0", "CDDL")
@@ -82,7 +107,6 @@ class JavaLicenseParser:
         declared_licenses["Public Domain"] = ("Public Domain", "Public Domain")
         declared_licenses["None"] = ("None", "None")
 
-        # not_required_license = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
         declared_license = ''
         k = 0
 
