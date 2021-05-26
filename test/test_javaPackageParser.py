@@ -22,8 +22,8 @@ class TestJavaPackageParser(TestCase):
         self.assertEqual('', res)
         
     def test_run(self):
-        out_file = 'tmp/java_packages.csv'
-        pp = JavaPackageParser('files/dep_tree_out.txt', 'files/dependency-management.html', out_file)
+        out_file = 'test/tmp/java_packages.csv'
+        pp = JavaPackageParser('test/files/dep_tree_out.txt', 'test/files/dependency-management.html', out_file)
         pp.run()
 
-        self.assertTrue(filecmp.cmp('files/output.csv', out_file));
+        self.assertTrue(filecmp.cmp('test/files/output.csv', out_file));
