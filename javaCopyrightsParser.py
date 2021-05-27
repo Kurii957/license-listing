@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 class JavaCopyrightsParser:
     def read_copyrigths(self, input_copyrights_url):
-        if input_copyrights_url != 'empty2':
+        if len(input_copyrights_url) > 10:
             url = urllib.request.urlopen(input_copyrights_url).read()
             soup = BeautifulSoup(url, 'html.parser')
             page_content = soup.get_text()
@@ -23,7 +23,7 @@ class JavaCopyrightsParser:
                 except:
                     copyright = copyright
             else:
-                copyright = "No copyrights"
+                copyright = "-"
 
         else:
             copyright = 'Copyright: Unknown.'

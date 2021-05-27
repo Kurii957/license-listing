@@ -30,7 +30,7 @@ class JavaLicenseParser:
         # Finding all td values in table
         for tr in self.soup.table:
             td_values = []
-            td_href = []
+            td_href = ['','']
             m = 0
             for td in tr:
                 if td != "\n":
@@ -48,10 +48,8 @@ class JavaLicenseParser:
             package_version = str(td_values[2])
             license_type = str(td_values[5])
             package_url = str('https://mvnrepository.com/artifact/'  + package_prefix + '/' + package_name + '/' + package_version)
-            try:
-                license_url = str(td_href[1])
-            except:
-                license_url = "-"
+
+            license_url = str(td_href[1])
 
             # Removing commas from license types
             license_type_split = license_type.split(",")
@@ -69,17 +67,11 @@ class JavaLicenseParser:
             self.copyrightsParser = JavaCopyrightsParser()
 
             not_required_licenses = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
-            bool = True
 
-            for license in not_required_licenses:
-                if license == declared_license:
-                    bool = False
-
-            if bool:
-                try:
-                    copyright = self.copyrightsParser.read_copyrigths(license_url)
-                except:
-                    copyright = "HTTP Error 403: Forbidden"
+            try:
+                copyright = self.copyrightsParser.read_copyrigths(license_url)
+            except:
+                copyright = "HTTP Error 403: Forbidden"
 
             all_parameters = package_name + sep + package_version + sep + package_prefix
             p = license_type + sep + package_url + sep + license_url
