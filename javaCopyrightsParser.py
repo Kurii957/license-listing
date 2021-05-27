@@ -9,12 +9,12 @@ class JavaCopyrightsParser:
             url = urllib.request.urlopen(input_copyrights_url).read()
             soup = BeautifulSoup(url, 'html.parser')
             page_content = soup.get_text()
-            wzor = '([[:space:]]|\*)*Copyright.*|^[[:space:]]*All rights reserved.*'
+            pattern = '([[:space:]]|\*)*Copyright.*|^[[:space:]]*All rights reserved.*'
 
-            dopas = re.search(wzor, page_content)
-            if dopas != None:
-                txt_start = dopas.start()
-                txt_end = dopas.end()
+            finding = re.search(pattern, page_content)
+            if finding != None:
+                txt_start = finding.start()
+                txt_end = finding.end()
                 copyright = page_content[txt_start:txt_end]
                 copyright_split = copyright.split(",")
                 join_string = ""

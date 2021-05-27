@@ -30,7 +30,7 @@ class JavaLicenseParser:
         # Finding all td values in table
         for tr in self.soup.table:
             td_values = []
-            td_href = ['empty1', 'empty2']
+            td_href = []
             m = 0
             for td in tr:
                 if td != "\n":
@@ -48,7 +48,10 @@ class JavaLicenseParser:
             package_version = str(td_values[2])
             license_type = str(td_values[5])
             package_url = str('https://mvnrepository.com/artifact/'  + package_prefix + '/' + package_name + '/' + package_version)
-            license_url = str(td_href[1])
+            try:
+                license_url = str(td_href[1])
+            except:
+                license_url = "-"
 
             # Removing commas from license types
             license_type_split = license_type.split(",")
@@ -105,7 +108,7 @@ class JavaLicenseParser:
         declared_licenses["CDDL-1.1"] = ("CDDL-1.1", "CDDL 1.1")
         declared_licenses["CC0-1.0"] = ("CC0-1.0", "CC0 1.0")
         declared_licenses["Public Domain"] = ("Public Domain", "Public Domain")
-        declared_licenses["None"] = ("None", "None")
+        declared_licenses["-"] = ("None", "None")
 
         declared_license = ''
         k = 0
