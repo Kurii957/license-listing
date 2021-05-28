@@ -19,7 +19,7 @@ class JavaLicenseParser:
         return self.licenses_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '-,-,-,-')
 
     def get_copyrights(self, package_name_prefix, package_name, package_version):
-        return self.copyrights_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, 'No copyrights')
+        return self.copyrights_list.get(package_name + JavaLicenseParser.SEPARATOR + package_version + JavaLicenseParser.SEPARATOR + package_name_prefix, '-')
 
     def read_licenses(self):
         all_values = []
