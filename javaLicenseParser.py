@@ -66,12 +66,17 @@ class JavaLicenseParser:
             # Getting copyrights
             self.copyrightsParser = JavaCopyrightsParser()
 
+            copyright = ''
             not_required_licenses = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
+            for i in not_required_licenses:
+                if i == declared_license:
+                    copyright = "-"
 
-            try:
-                copyright = self.copyrightsParser.read_copyrigths(license_url)
-            except:
-                copyright = "HTTP Error 403: Forbidden"
+            if copyright == '':
+                try:
+                    copyright = self.copyrightsParser.read_copyrigths(license_url)
+                except:
+                    copyright = "HTTP Error 403: Forbidden"
 
             all_parameters = package_name + sep + package_version + sep + package_prefix
             p = license_type + sep + package_url + sep + license_url
