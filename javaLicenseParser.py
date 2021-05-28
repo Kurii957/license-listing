@@ -67,7 +67,7 @@ class JavaLicenseParser:
             self.copyrightsParser = JavaCopyrightsParser()
 
             copyright = ''
-            not_required_licenses = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "None"}
+            not_required_licenses = {"Apache-2.0", "Public Domain", "EPL-1.0", "EPL-2.0", "MPL-2.0", "CDDL-1.0", "CDDL-1.1", "EDL-1.0", "None"}
             for i in not_required_licenses:
                 if i == declared_license:
                     copyright = "-"
