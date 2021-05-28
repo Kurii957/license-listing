@@ -23,7 +23,7 @@ class JavaCopyrightsParser:
                 except:
                     copyright = copyright
             else:
-                copyright = "-"
+                copyright = "Copyright: Unknown."
 
         else:
             copyright = 'Copyright: Unknown.'
